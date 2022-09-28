@@ -53,8 +53,8 @@
         position: absolute;
         font-family: 'Montserrat Regular', sans-serif;
         text-transform: uppercase;
-        right: 120px;
-        left: 120px;
+        right: 100px;
+        left: 100px;
         text-align: center;
         line-height: 21px;
     }
