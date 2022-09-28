@@ -1,6 +1,5 @@
 <svelte:head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 </svelte:head>
 
 <style>
@@ -104,7 +103,6 @@
             });
     }
 </script>
-
 
 <div class="form">
     <input bind:value={name} type="text" placeholder="Nome do GC">
