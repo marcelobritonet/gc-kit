@@ -85,6 +85,7 @@
 <script>
     import * as htmlToImage from 'html-to-image';
 
+    let prefix = "GC 27+"
     let name = "Vivendas Bandeirantes"
     let date = "Quarta 20h"
     let address_top = "Rua General Miguel Ferreira, 178."
@@ -97,7 +98,7 @@
         htmlToImage.toJpeg(document.getElementById('kit'), { quality: 1 })
             .then(function (dataUrl) {
                 var link = document.createElement('a');
-                link.download = 'my-image-name.jpeg';
+                link.download = `${prefix} ${name} - ${date}.jpeg`;
                 link.href = dataUrl;
                 link.click();
             });
