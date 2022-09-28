@@ -96,13 +96,13 @@
     onMount(async () => {
         const lastData = retrieveLastData()
 
-        prefix = lastData.prefix;
-        name = lastData.name;
-        date = lastData.date;
-        address_top = lastData.address_top;
-        address_bottom = lastData.address_bottom;
-        contact_1 = lastData.contact_1;
-        contact_2 = lastData.contact_2;
+        prefix = lastData.prefix || "GC 27+";
+        name = lastData.name || "nome do gc";
+        date = lastData.date || "data hora";
+        address_top = lastData.address_top || "endereço";
+        address_bottom = lastData.address_bottom || "complemento";
+        contact_1 = lastData.contact_1 || "nome telefone";
+        contact_2 = lastData.contact_2 || "nome telefone";
     });
 
     function handleGenerate() {
