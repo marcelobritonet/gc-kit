@@ -82,18 +82,35 @@
 </style>
 
 <script>
+    import { onMount } from "svelte";
     import * as htmlToImage from 'html-to-image';
 
-    let prefix = "GC 27+"
-    let name = "Vivendas Bandeirantes"
-    let date = "Quarta 20h"
-    let address_top = "Rua General Miguel Ferreira, 178."
-    let address_bottom = "Taquara"
-    let contact_1 = "Elvis (21) 96423-6776"
-    let contact_2 = "Thaís (21) 96423-2802"
+    let prefix;
+    let name;
+    let date;
+    let address_top;
+    let address_bottom;
+    let contact_1;
+    let contact_2;
+
+    onMount(async () => {
+        const lastData = retrieveLastData()
+
+        prefix = lastData.prefix;
+        name = lastData.name;
+        date = lastData.date;
+        address_top = lastData.address_top;
+        address_bottom = lastData.address_bottom;
+        contact_1 = lastData.contact_1;
+        contact_2 = lastData.contact_2;
+    });
+
+    function handleGenerate() {
+        generate()
+        storageLastData()
+    }
 
     function generate() {
-
         htmlToImage.toJpeg(document.getElementById('kit'), { quality: 1 })
             .then(function (dataUrl) {
                 var link = document.createElement('a');
@@ -101,6 +118,25 @@
                 link.href = dataUrl;
                 link.click();
             });
+    }
+
+    function storageLastData() {
+        const obj = {
+            prefix: prefix,
+            name: name,
+            date: date,
+            address_top: address_top,
+            address_bottom: address_bottom,
+            contact_1: contact_1,
+            contact_2: contact_2
+        }
+        const myJSON = JSON.stringify(obj);
+        localStorage.setItem("last-item", myJSON);
+    }
+
+    function retrieveLastData() {
+        const lastItem = localStorage.getItem("last-item")
+        return JSON.parse(lastItem);
     }
 </script>
 
@@ -112,7 +148,7 @@
     <input bind:value={contact_1} type="text" placeholder="Contato 1">
     <input bind:value={contact_2} type="text" placeholder="Contato 2">
 
-    <button on:click={generate}>Baixar Arte</button>
+    <button on:click={handleGenerate}>Baixar Arte</button>
 </div>
 
 <div class="wrapper">
