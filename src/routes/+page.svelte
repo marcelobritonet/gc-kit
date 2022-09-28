@@ -53,11 +53,17 @@
         position: absolute;
         font-family: 'Montserrat Regular', sans-serif;
         text-transform: uppercase;
-        top: 593px;
-        left: 120px;
         right: 120px;
+        left: 120px;
         text-align: center;
         line-height: 21px;
+    }
+    .address_top {
+        top: 593px;
+
+    }
+    .address_bottom {
+        top: 614px;
     }
     .contact {
         color: white;
@@ -81,7 +87,8 @@
 
     let name = "Vivendas Bandeirantes"
     let date = "Quarta 20h"
-    let address = "Rua General Miguel Ferreira, 178. Taquara"
+    let address_top = "Rua General Miguel Ferreira, 178."
+    let address_bottom = "Taquara"
     let contact_1 = "Elvis (21) 96423-6776"
     let contact_2 = "Thaís (21) 96423-2802"
 
@@ -101,7 +108,8 @@
 <div class="form">
     <input bind:value={name} type="text" placeholder="Nome do GC">
     <input bind:value={date} type="text" placeholder="Dia da Semana / Horário">
-    <input bind:value={address} type="text" placeholder="Endereço">
+    <input bind:value={address_top} type="text" placeholder="Endereço">
+    <input bind:value={address_bottom} type="text" placeholder="Complemento">
     <input bind:value={contact_1} type="text" placeholder="Contato 1">
     <input bind:value={contact_2} type="text" placeholder="Contato 2">
 
@@ -112,7 +120,8 @@
     <div class="folder" id="kit">
         <p class="title name">{name}</p>
         <p class="title date">{date}</p>
-        <p class="address">{address}</p>
+        <p class="address address_top">{address_top}</p>
+        <p class="address address_bottom">{address_bottom}</p>
         <p class="contact contact-first">{contact_1}</p>
         <p class="contact contact-second">{contact_2}</p>
         <img class="base" src="folder-base.jpeg" alt="">
