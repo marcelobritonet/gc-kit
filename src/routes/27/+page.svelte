@@ -125,7 +125,7 @@
     onMount(async () => {
         const lastData = retrieveLastData()
 
-        prefix = lastData.prefix || "GC 27+";
+        prefix = "GC 27+";
         name = lastData.name || "nome do gc";
         group = lastData.group || "";
         date = lastData.date || "data hora";
