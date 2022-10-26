@@ -36,7 +36,7 @@
         max-height: 1024px;
     }
     .title {
-        color: white;
+        color: black;
         position: absolute;
         font-size: 33px;
         text-transform: uppercase;
