@@ -112,7 +112,7 @@
     onMount(async () => {
         const lastData = retrieveLastData()
 
-        prefix = lastData.prefix || "GC 27+";
+        prefix = lastData.prefix || "GC NEXT";
         name = lastData.name || "nome do gc";
         date = lastData.date || "data hora";
         address_top = lastData.address_top || "endereço";
