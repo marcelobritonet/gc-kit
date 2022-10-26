@@ -50,14 +50,14 @@
     .group {
         color: white;
         position: absolute;
-        font-size: 28px;
+        font-size: 16px;
         text-transform: uppercase;
         font-family: 'Hanson Bold', sans-serif;
         text-align: center;
         letter-spacing: .3px;
-        top: 415px;
-        left: 37px;
-        right: 30px;
+        top: 400px;
+        left: 365px;
+        right: 60px;
     }
     .date {
         color: white;
