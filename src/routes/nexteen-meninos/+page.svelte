@@ -99,7 +99,7 @@
 
 <script>
     import { onMount } from "svelte";
-    import { retrieveLastData, generate, storageLastData } from "../+layout.js";
+    import {retrieveLastData, generate, storageLastData, capitalizeString} from "../+layout.js";
 
     let prefix;
     let name;
@@ -122,7 +122,7 @@
     });
 
     function handleGenerate() {
-        const filename = `${prefix} ${name} - ${date.toUpperCase()}.jpeg`
+        const filename = `${prefix} ${capitalizeString(name)} - ${date.toUpperCase()}.jpeg`
         const obj = {
             prefix: prefix,
             name: name,
