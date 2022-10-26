@@ -42,9 +42,9 @@
         text-transform: uppercase;
         font-family: 'Hanson Bold', sans-serif;
         text-align: center;
-        letter-spacing: -.1px;
-        top: 388px;
-        left: 41px;
+        letter-spacing: -1.9px;
+        top: 392px;
+        left: 40px;
         right: 30px;
     }
     .group {
@@ -192,7 +192,7 @@
         <p class="address address_bottom">{address_bottom}</p>
         <p class="contact contact-first">{contact_1}</p>
         <p class="contact contact-second">{contact_2}</p>
-        <img class="base" src="nexteen-meninos/BASE-MENINOS.png" alt="">
-<!--        <img class="base" src="nexteen-meninos/EXEMPLO-NEXTEEN-MENINOS.png" alt="">-->
+        <img class="base" src="nexteen-meninas/BASE-MENINAS.png" alt="">
+<!--        <img class="base" src="nexteen-meninas/EXEMPLO-NEXTEEN-MENINAS.png" alt="">-->
     </div>
 </div>
