@@ -33,59 +33,79 @@
         left: 0;
     }
     .base{
-
+        max-height: 1024px;
     }
     .title {
         color: white;
         position: absolute;
-        font-size: 25px;
+        font-size: 28px;
         text-transform: uppercase;
-        font-family: 'Fjalla One', sans-serif;
-        letter-spacing: -1.4px;
-    }
-    .name {
-        top: 470px;
-        left: 113px;
+        font-family: 'Hanson Bold', sans-serif;
+        text-align: center;
+        letter-spacing: .3px;
+        top: 415px;
+        left: 37px;
+        right: 30px;
     }
     .group {
-        top: 440px;
-        right: 108px;
+        color: white;
+        position: absolute;
+        font-size: 28px;
+        text-transform: uppercase;
+        font-family: 'Hanson Bold', sans-serif;
+        text-align: center;
+        letter-spacing: .3px;
+        top: 415px;
+        left: 37px;
+        right: 30px;
     }
     .date {
-        top: 470px;
-        right: 108px;
+        color: white;
+        position: absolute;
+        font-size: 23px;
+        text-transform: uppercase;
+        font-family: 'Gobold Bold', sans-serif;
+        text-align: center;
+        letter-spacing: -1.4px;
+        top: 503px;
+        left: 32px;
+        right: 30px;
     }
     .address {
         color: white;
         position: absolute;
-        font-family: 'Montserrat Regular', sans-serif;
+        font-family: 'Consola', sans-serif;
         text-transform: uppercase;
-        right: 100px;
-        left: 100px;
+        right: 30px;
+        left: 32px;
         text-align: center;
         line-height: 21px;
+        font-size: 24px;
+        letter-spacing: -0.6px;
     }
     .address_top {
-        top: 593px;
+        top: 606px;
 
     }
     .address_bottom {
-        top: 614px;
+        top: 629px;
     }
     .contact {
         color: white;
         position: absolute;
-        font-family: 'Montserrat Regular', sans-serif;
+        font-family: 'Consola', sans-serif;
         text-transform: uppercase;
         text-align: center;
-        left: 125px;
-        right: 120px;
+        left: 52px;
+        right: 50px;
+        font-size: 22px;
+        letter-spacing: -0.4px;
     }
     .contact-first {
-        top: 683px;
+        top: 703px;
     }
     .contact-second {
-        top: 705px;
+        top: 727px;
     }
 </style>
 
@@ -165,13 +185,14 @@
 
 <div class="wrapper">
     <div class="folder" id="kit">
-        <p class="title name">{name}</p>
-        <p class="title group">{group}</p>
-        <p class="title date">{date}</p>
+        <p class="title">{name}</p>
+        <p class="group">{group}</p>
+        <p class="date">{date}</p>
         <p class="address address_top">{address_top}</p>
         <p class="address address_bottom">{address_bottom}</p>
         <p class="contact contact-first">{contact_1}</p>
         <p class="contact contact-second">{contact_2}</p>
-        <img class="base" src="folder-base.jpeg" alt="">
+        <img class="base" src="27/BASE-NEXT27.png" alt="">
+<!--        <img class="base" src="27/EXEMPLO-NEXT27.png" alt="">-->
     </div>
 </div>
