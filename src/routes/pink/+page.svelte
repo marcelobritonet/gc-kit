@@ -47,18 +47,6 @@
         left: 42px;
         right: 30px;
     }
-    .group {
-        color: white;
-        position: absolute;
-        font-size: 28px;
-        text-transform: uppercase;
-        font-family: 'Hanson Bold', sans-serif;
-        text-align: center;
-        letter-spacing: .3px;
-        top: 415px;
-        left: 37px;
-        right: 30px;
-    }
     .date {
         color: white;
         position: absolute;
@@ -115,7 +103,6 @@
 
     let prefix;
     let name;
-    let group;
     let date;
     let address_top;
     let address_bottom;
@@ -127,7 +114,6 @@
 
         prefix = lastData.prefix || "GC 27+";
         name = lastData.name || "nome do gc";
-        group = lastData.group || "";
         date = lastData.date || "data hora";
         address_top = lastData.address_top || "endereço";
         address_bottom = lastData.address_bottom || "complemento";
@@ -154,7 +140,6 @@
         const obj = {
             prefix: prefix,
             name: name,
-            group: group,
             date: date,
             address_top: address_top,
             address_bottom: address_bottom,
@@ -173,7 +158,6 @@
 
 <div class="form">
     <input bind:value={name} type="text" placeholder="Nome do GC">
-    <input bind:value={group} type="text" placeholder="(opcional) Grupo">
     <input bind:value={date} type="text" placeholder="Dia da Semana / Horário">
     <input bind:value={address_top} type="text" placeholder="Endereço">
     <input bind:value={address_bottom} type="text" placeholder="Complemento">
@@ -186,7 +170,6 @@
 <div class="wrapper">
     <div class="folder" id="kit">
         <p class="title">{name}</p>
-        <p class="group">{group}</p>
         <p class="date">{date}</p>
         <p class="address address_top">{address_top}</p>
         <p class="address address_bottom">{address_bottom}</p>
