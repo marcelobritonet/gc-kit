@@ -8,7 +8,8 @@ export function retrieveLastData() {
 }
 
 export async function storageLastData(obj) {
-    const lastData = retrieveLastData() || []
+    const restoredLastData = retrieveLastData()
+    const lastData = Array.isArray(restoredLastData) ? restoredLastData : []
     obj.hash = await hash(JSON.stringify(obj))
     const newData = [obj, ...lastData]
     const myJSON = JSON.stringify(newData);
