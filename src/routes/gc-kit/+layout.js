@@ -29,7 +29,7 @@ export function generate(filename) {
             var link = document.createElement('a');
             link.download = filename;
             link.href = dataUrl;
-            link.click();
+            // link.click();
         });
 }
 
