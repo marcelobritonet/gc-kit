@@ -36,15 +36,15 @@
         max-height: 1024px;
     }
     .title {
-        color: #CB329A;
+        color: black;
         position: absolute;
-        font-size: 27px;
+        font-size: 36px;
         text-transform: uppercase;
         font-family: 'Hanson Bold', sans-serif;
         text-align: center;
-        letter-spacing: 0.8px;
-        top: 403px;
-        left: 42px;
+        letter-spacing: -1.9px;
+        top: 392px;
+        left: 40px;
         right: 30px;
     }
     .date {
@@ -56,7 +56,7 @@
         text-align: center;
         letter-spacing: -1.4px;
         top: 504px;
-        left: 23px;
+        left: 24px;
         right: 20px;
     }
     .address {
@@ -76,7 +76,7 @@
 
     }
     .address_bottom {
-        top: 628px;
+        top: 629px;
     }
     .contact {
         color: white;
@@ -90,7 +90,7 @@
         letter-spacing: -0.4px;
     }
     .contact-first {
-        top: 702px;
+        top: 701px;
     }
     .contact-second {
         top: 727px;
@@ -112,7 +112,7 @@
     onMount(async () => {
         const lastData = retrieveLastData()
 
-        prefix = "GC Pink";
+        prefix = "GC Nexteen Meninas";
         name = lastData.name || "nome do gc";
         date = lastData.date || "data hora";
         address_top = lastData.address_top || "endereço";
@@ -156,7 +156,7 @@
         <p class="address address_bottom">{address_bottom}</p>
         <p class="contact contact-first">{contact_1}</p>
         <p class="contact contact-second">{contact_2}</p>
-        <img class="base" src="pink/BASE-PINK.png" alt="">
-<!--        <img class="base" src="pink/EXEMPLO-PINK.png" alt="">-->
+        <img class="base" src="../nexteen-meninas/BASE-MENINAS.png" alt="">
+<!--        <img class="base" src="../nexteen-meninas/EXEMPLO-NEXTEEN-MENINAS.png" alt="">-->
     </div>
 </div>

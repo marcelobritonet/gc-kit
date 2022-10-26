@@ -38,14 +38,14 @@
     .title {
         color: black;
         position: absolute;
-        font-size: 27px;
+        font-size: 33px;
         text-transform: uppercase;
         font-family: 'Hanson Bold', sans-serif;
         text-align: center;
-        letter-spacing: -.7px;
-        top: 466px;
-        left: 28px;
-        right: 30px;
+        letter-spacing: 1.5px;
+        top: 423px;
+        left: 37px;
+        right: 20px;
     }
     .date {
         color: white;
@@ -55,8 +55,8 @@
         font-family: 'Gobold Bold', sans-serif;
         text-align: center;
         letter-spacing: -1.4px;
-        top: 554px;
-        left: 26px;
+        top: 531px;
+        left: 37px;
         right: 20px;
     }
     .address {
@@ -72,11 +72,11 @@
         letter-spacing: -0.6px;
     }
     .address_top {
-        top: 650px;
+        top: 630px;
 
     }
     .address_bottom {
-        top: 675px;
+        top: 652px;
     }
     .contact {
         color: white;
@@ -90,10 +90,10 @@
         letter-spacing: -0.4px;
     }
     .contact-first {
-        top: 746px;
+        top: 724px;
     }
     .contact-second {
-        top: 771px;
+        top: 748px;
     }
 </style>
 
@@ -112,7 +112,7 @@
     onMount(async () => {
         const lastData = retrieveLastData()
 
-        prefix = "GC Next";
+        prefix = "GC Casais";
         name = lastData.name || "nome do gc";
         date = lastData.date || "data hora";
         address_top = lastData.address_top || "endereço";
@@ -156,7 +156,7 @@
         <p class="address address_bottom">{address_bottom}</p>
         <p class="contact contact-first">{contact_1}</p>
         <p class="contact contact-second">{contact_2}</p>
-        <img class="base" src="next/BASE-NEXT.png" alt="">
-<!--        <img class="base" src="next/EXEMPLO-NEXT.png" alt="">-->
+        <img class="base" src="../casais/BASE-CASAIS.png" alt="">
+<!--        <img class="base" src="../casais/EXEMPLO-CASAIS.png" alt="">-->
     </div>
 </div>

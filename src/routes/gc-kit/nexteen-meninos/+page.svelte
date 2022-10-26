@@ -38,14 +38,14 @@
     .title {
         color: black;
         position: absolute;
-        font-size: 33px;
+        font-size: 36px;
         text-transform: uppercase;
         font-family: 'Hanson Bold', sans-serif;
         text-align: center;
-        letter-spacing: 1.5px;
-        top: 423px;
-        left: 37px;
-        right: 20px;
+        letter-spacing: -.1px;
+        top: 388px;
+        left: 41px;
+        right: 30px;
     }
     .date {
         color: white;
@@ -55,8 +55,8 @@
         font-family: 'Gobold Bold', sans-serif;
         text-align: center;
         letter-spacing: -1.4px;
-        top: 531px;
-        left: 37px;
+        top: 504px;
+        left: 24px;
         right: 20px;
     }
     .address {
@@ -72,11 +72,11 @@
         letter-spacing: -0.6px;
     }
     .address_top {
-        top: 630px;
+        top: 606px;
 
     }
     .address_bottom {
-        top: 652px;
+        top: 629px;
     }
     .contact {
         color: white;
@@ -90,10 +90,10 @@
         letter-spacing: -0.4px;
     }
     .contact-first {
-        top: 724px;
+        top: 701px;
     }
     .contact-second {
-        top: 748px;
+        top: 727px;
     }
 </style>
 
@@ -112,7 +112,7 @@
     onMount(async () => {
         const lastData = retrieveLastData()
 
-        prefix = "GC Casais";
+        prefix = "GC Nexteen Meninos";
         name = lastData.name || "nome do gc";
         date = lastData.date || "data hora";
         address_top = lastData.address_top || "endereço";
@@ -156,7 +156,7 @@
         <p class="address address_bottom">{address_bottom}</p>
         <p class="contact contact-first">{contact_1}</p>
         <p class="contact contact-second">{contact_2}</p>
-        <img class="base" src="casais/BASE-CASAIS.png" alt="">
-<!--        <img class="base" src="casais/EXEMPLO-CASAIS.png" alt="">-->
+        <img class="base" src="../nexteen-meninos/BASE-MENINOS.png" alt="">
+<!--        <img class="base" src="../nexteen-meninos/EXEMPLO-NEXTEEN-MENINOS.png" alt="">-->
     </div>
 </div>

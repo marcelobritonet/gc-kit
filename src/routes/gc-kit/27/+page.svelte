@@ -111,9 +111,17 @@
 
 <script>
     import { onMount } from "svelte";
-    import {retrieveLastData, generate, storageLastData, capitalizeString} from "../+layout.js";
+    import {
+        retrieveLastData,
+        generate,
+        storageLastData,
+        capitalizeString,
+        deleteStorageDataByHash
+    } from "../+layout.js";
 
-    let prefix;
+    let lastData = [];
+
+    let prefix = "GC 27+";
     let name;
     let group;
     let date;
@@ -123,19 +131,10 @@
     let contact_2;
 
     onMount(async () => {
-        const lastData = retrieveLastData()
-
-        prefix = "GC 27+";
-        name = lastData.name || "nome do gc";
-        group = lastData.group || "";
-        date = lastData.date || "data hora";
-        address_top = lastData.address_top || "endereço";
-        address_bottom = lastData.address_bottom || "complemento";
-        contact_1 = lastData.contact_1 || "nome telefone";
-        contact_2 = lastData.contact_2 || "nome telefone";
+        lastData = retrieveLastData()
     });
 
-    function handleGenerate() {
+    async function handleGenerate() {
         const filename = `${prefix} ${capitalizeString(name)} - ${date.toUpperCase()}.jpeg`
         const obj = {
             prefix: prefix,
@@ -148,7 +147,27 @@
             contact_2: contact_2
         }
         generate(filename)
-        storageLastData(obj)
+        await storageLastData(obj)
+        updateLastDataList()
+    }
+
+    function handleDelete(hash) {
+        deleteStorageDataByHash(hash)
+        updateLastDataList()
+    }
+
+    function updateLastDataList() {
+        lastData = retrieveLastData()
+    }
+
+    function handleRestoreData(lastData) {
+        name = lastData.name || "nome do gc";
+        group = lastData.group || "";
+        date = lastData.date || "data hora";
+        address_top = lastData.address_top || "endereço";
+        address_bottom = lastData.address_bottom || "complemento";
+        contact_1 = lastData.contact_1 || "nome telefone";
+        contact_2 = lastData.contact_2 || "nome telefone";
     }
 
 </script>
@@ -163,6 +182,18 @@
     <input bind:value={contact_2} type="text" placeholder="Contato 2">
 
     <button on:click={handleGenerate}>Baixar Arte</button>
+    <button on:click={handleDelete}>Delete</button>
+
+    <ul>
+        {#each lastData as last}
+            <li>{last.name} - {last.date}</li>
+            <li>{last.address_top} - {last.address_bottom}</li>
+            <li>{last.contact_1}</li>
+            <li>{last.contact_2}</li>
+            <button on:click|preventDefault={ () => handleDelete(last.hash) }>Delete</button>
+            <button on:click|preventDefault={ () => handleRestoreData(last) }>Restaurar</button>
+        {/each}
+    </ul>
 </div>
 
 <div class="wrapper">
@@ -174,7 +205,7 @@
         <p class="address address_bottom">{address_bottom}</p>
         <p class="contact contact-first">{contact_1}</p>
         <p class="contact contact-second">{contact_2}</p>
-        <img class="base" src="27/BASE-NEXT27.png" alt="">
-<!--        <img class="base" src="27/EXEMPLO-NEXT27.png" alt="">-->
+        <img class="base" src="../27/BASE-NEXT27.png" alt="">
+<!--        <img class="base" src="../27/EXEMPLO-NEXT27.png" alt="">-->
     </div>
 </div>

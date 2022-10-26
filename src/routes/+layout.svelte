@@ -1,10 +1,11 @@
 <nav>
-    <a href="/27">27+</a>
-    <a href="/casais">Casais</a>
-    <a href="/next">Next</a>
-    <a href="/pink">Pink</a>
-    <a href="/nexteen-meninos">Nexteen Meninos</a>
-    <a href="/nexteen-meninas">Nexteen Meninas</a>
+    <a href="/gc-kit/27">27+</a>
+    <a href="/gc-kit/casais">Casais</a>
+    <a href="/gc-kit/next">Next</a>
+    <a href="/gc-kit/pink">Pink</a>
+    <a href="/gc-kit/nexteen-meninos">Nexteen Meninos</a>
+    <a href="/gc-kit/nexteen-meninas">Nexteen Meninas</a>
+    <a href="/changelog">Versão 2.12.0</a>
 </nav>
 
 <slot></slot>
