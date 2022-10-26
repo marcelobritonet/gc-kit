@@ -111,7 +111,7 @@
 
 <script>
     import { onMount } from "svelte";
-    import * as htmlToImage from 'html-to-image';
+    import { retrieveLastData, generate, storageLastData } from "../+layout.js";
 
     let prefix;
     let name;
@@ -136,21 +136,7 @@
     });
 
     function handleGenerate() {
-        generate()
-        storageLastData()
-    }
-
-    function generate() {
-        htmlToImage.toJpeg(document.getElementById('kit'), { quality: 1 })
-            .then(function (dataUrl) {
-                var link = document.createElement('a');
-                link.download = `${prefix} ${name} - ${date}.jpeg`;
-                link.href = dataUrl;
-                link.click();
-            });
-    }
-
-    function storageLastData() {
+        const filename = `${prefix} ${name} - ${date.toUpperCase()}.jpeg`
         const obj = {
             prefix: prefix,
             name: name,
@@ -161,14 +147,10 @@
             contact_1: contact_1,
             contact_2: contact_2
         }
-        const myJSON = JSON.stringify(obj);
-        localStorage.setItem("last-item", myJSON);
+        generate(filename)
+        storageLastData(obj)
     }
 
-    function retrieveLastData() {
-        const lastItem = localStorage.getItem("last-item")
-        return JSON.parse(lastItem);
-    }
 </script>
 
 <div class="form">
