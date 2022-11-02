@@ -7,6 +7,7 @@
 
 <div>
     <ul>
+        <li>3.2.1 - Nome do arquivo grupo misto</li>
         <li>3.2.0 - Estilo sub grupo Misto</li>
         <li>3.1.2 - Corrige geração da arte</li>
         <li>3.0.1 - Corrige cenários os dados salvos são no formato legado</li>

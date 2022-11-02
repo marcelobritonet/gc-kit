@@ -10,4 +10,4 @@
 
 <slot></slot>
 
-<a href="/changelog">3.2.0</a>
+<a href="/changelog">3.2.1</a>

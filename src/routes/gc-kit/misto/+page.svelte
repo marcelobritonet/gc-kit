@@ -109,7 +109,7 @@
 
     let lastData = [];
 
-    let prefix = "GC Next";
+    let prefix = "GC Misto";
     let name;
     let date;
     let address_top;
