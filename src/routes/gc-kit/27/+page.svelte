@@ -111,6 +111,15 @@
 
 <script>
     import { onMount } from "svelte";
+    import Card, {
+        Content,
+        ActionButtons,
+        Actions,
+        ActionIcons,
+    } from '@smui/card';
+    import Button, { Label } from '@smui/button';
+    import IconButton, { Icon } from '@smui/icon-button';
+
     import {
         retrieveLastData,
         generate,
@@ -181,19 +190,35 @@
     <input bind:value={contact_1} type="text" placeholder="Contato 1">
     <input bind:value={contact_2} type="text" placeholder="Contato 2">
 
-    <button on:click={handleGenerate}>Baixar Arte</button>
-    <button on:click={handleDelete}>Delete</button>
+    <Button on:click={handleGenerate} variant="raised">
+        <Label>Gerar Arte</Label>
+    </Button>
 
-    <ul>
-        {#each lastData as last}
-            <li>{last.name} - {last.date}</li>
-            <li>{last.address_top} - {last.address_bottom}</li>
-            <li>{last.contact_1}</li>
-            <li>{last.contact_2}</li>
-            <button on:click|preventDefault={ () => handleDelete(last.hash) }>Delete</button>
-            <button on:click|preventDefault={ () => handleRestoreData(last) }>Restaurar</button>
-        {/each}
-    </ul>
+    {#each lastData as last}
+        <div class="card-container">
+            <Card>
+                <Content>
+                    <h2>{last.prefix} {last.name} - {last.date}</h2>
+                    <p>{last.address_top} - {last.address_bottom}</p>
+                    <p>{last.contact_1} - {last.contact_2}</p>
+                </Content>
+                <Actions>
+                    <ActionIcons>
+                        <IconButton
+                                class="material-icons"
+                                on:click={ () => handleRestoreData(last) }
+                                title="Share">settings_backup_restore</IconButton
+                        >
+                        <IconButton
+                                class="material-icons"
+                                on:click={ () => handleDelete(last.hash) }
+                                title="More options">delete</IconButton
+                        >
+                    </ActionIcons>
+                </Actions>
+            </Card>
+        </div>
+    {/each}
 </div>
 
 <div class="wrapper">

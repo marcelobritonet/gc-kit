@@ -7,6 +7,7 @@
 
 <div>
     <ul>
+        <li>3.1.2 - Corrige geração da arte</li>
         <li>3.1.1 - Gerenciamento da lista de últimos gerados em todos os tempaltes</li>
         <li>3.0.1 - Corrige cenários os dados salvos são no formato legado</li>
         <li>3.0.0 - Arquitetura de arquivos e gerenciamento da lista de últimos gerados</li>
