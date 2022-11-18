@@ -162,7 +162,6 @@
 
     function handleRestoreData(lastData) {
         name = lastData.name || "nome do gc";
-        group = lastData.group || "";
         date = lastData.date || "data hora";
         address_top = lastData.address_top || "endereço";
         address_bottom = lastData.address_bottom || "complemento";

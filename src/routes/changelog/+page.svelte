@@ -7,6 +7,7 @@
 
 <div>
     <ul>
+        <li>3.3.1 - Fix restore data</li>
         <li>3.3.0 - Novo template 27+ Casais</li>
         <li>3.2.1 - Nome do arquivo grupo misto</li>
         <li>3.2.0 - Estilo sub grupo Misto</li>
