@@ -47,6 +47,18 @@
         left: 37px;
         right: 30px;
     }
+    .group {
+        color: white;
+        position: absolute;
+        font-size: 16px;
+        text-transform: uppercase;
+        font-family: 'Hanson Bold', sans-serif;
+        text-align: center;
+        letter-spacing: .3px;
+        top: 400px;
+        left: 365px;
+        right: 60px;
+    }
     .date {
         color: white;
         position: absolute;
@@ -111,6 +123,7 @@
 
     let prefix = "GC 27+";
     let name;
+    let group = "Casais";
     let date;
     let address_top;
     let address_bottom;
@@ -122,10 +135,11 @@
     });
 
     async function handleGenerate() {
-        const filename = `${prefix} ${capitalizeString(name)} - ${date.toUpperCase()}.jpeg`
+        const filename = `${prefix} ${capitalizeString(group)} ${capitalizeString(name)} - ${date.toUpperCase()}.jpeg`
         const obj = {
             prefix: prefix,
             name: name,
+            group: group,
             date: date,
             address_top: address_top,
             address_bottom: address_bottom,
@@ -148,6 +162,7 @@
 
     function handleRestoreData(lastData) {
         name = lastData.name || "nome do gc";
+        group = lastData.group || "";
         date = lastData.date || "data hora";
         address_top = lastData.address_top || "endereço";
         address_bottom = lastData.address_bottom || "complemento";
@@ -183,6 +198,7 @@
 <div class="wrapper">
     <div class="folder" id="kit">
         <p class="title">{name}</p>
+        <p class="group">{group}</p>
         <p class="date">{date}</p>
         <p class="address address_top">{address_top}</p>
         <p class="address address_bottom">{address_bottom}</p>

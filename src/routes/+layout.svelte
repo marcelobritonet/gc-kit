@@ -1,5 +1,6 @@
 <nav>
     <a href="/gc-kit/27">27+</a>
+    <a href="/gc-kit/27-casais">27+ Casais</a>
     <a href="/gc-kit/casais">Casais</a>
     <a href="/gc-kit/next">Next</a>
     <a href="/gc-kit/pink">Pink</a>
@@ -10,4 +11,4 @@
 
 <slot></slot>
 
-<a href="/changelog">3.2.1</a>
+<a href="/changelog">3.3.0</a>
