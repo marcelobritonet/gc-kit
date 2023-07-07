@@ -7,6 +7,7 @@
 
 <div>
     <ul>
+        <li>4.2.0 - Novo Template 27+ Casais</li>
         <li>4.1.1 - Corrige o bloqueio da geração de arte quando nao houver mudança nos dados</li>
         <li>4.1.0 - Novo Template 27+</li>
         <li>4.0.1 - Corrige impressão da arte</li>

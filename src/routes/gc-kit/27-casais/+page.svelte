@@ -4,16 +4,8 @@
 
 <style>
     @font-face {
-        font-family: 'Consola';
-        src: url("/font/consola.ttf");
-    }
-    @font-face {
-        font-family: 'Gobold Bold';
-        src: url("/font/gobold-bold.otf");
-    }
-    @font-face {
-        font-family: 'Hanson Bold';
-        src: url("/font/hanson-bold.ttf");
+        font-family: 'Printvetica';
+        src: url("/font/Printvetica.otf");
     }
     .wrapper {
         margin: 0;
@@ -36,76 +28,72 @@
         max-height: 1024px;
     }
     .title {
-        color: white;
+        color: #004012;
         position: absolute;
-        font-size: 28px;
+        font-size: 36px;
         text-transform: uppercase;
-        font-family: 'Hanson Bold', sans-serif;
+        font-family: 'Printvetica', sans-serif;
         text-align: center;
-        letter-spacing: .3px;
-        top: 415px;
+        letter-spacing: 0;
+        top: 487px;
         left: 37px;
         right: 30px;
     }
-    .group {
-        color: white;
-        position: absolute;
-        font-size: 16px;
-        text-transform: uppercase;
-        font-family: 'Hanson Bold', sans-serif;
-        text-align: center;
-        letter-spacing: .3px;
-        top: 400px;
-        left: 365px;
-        right: 60px;
-    }
     .date {
-        color: white;
+        color: black;
         position: absolute;
-        font-size: 23px;
+        font-size: 30px;
         text-transform: uppercase;
-        font-family: 'Gobold Bold', sans-serif;
+        font-family: 'Printvetica', sans-serif;
         text-align: center;
-        letter-spacing: -1.4px;
-        top: 503px;
+        top: 573px;
         left: 32px;
         right: 30px;
-    }
-    .address {
-        color: white;
-        position: absolute;
-        font-family: 'Consola', sans-serif;
-        text-transform: uppercase;
-        right: 30px;
-        left: 32px;
-        text-align: center;
-        line-height: 21px;
-        font-size: 24px;
-        letter-spacing: -0.6px;
-    }
-    .address_top {
-        top: 606px;
-
-    }
-    .address_bottom {
-        top: 629px;
     }
     .contact {
-        color: white;
+        color: black;
         position: absolute;
-        font-family: 'Consola', sans-serif;
+        font-family: 'Printvetica', sans-serif;
         text-transform: uppercase;
         text-align: center;
         left: 52px;
         right: 50px;
-        font-size: 22px;
-        letter-spacing: -0.4px;
+        font-size: 21px;
+        letter-spacing: -.47px;
     }
-    .contact-first {
-        top: 703px;
+    .contact_label {
+        top: 679px;
+        font-size: 19px;
+        letter-spacing: .7px;
     }
-    .contact-second {
-        top: 727px;
+    .contact_first {
+        top: 700px;
+    }
+    .contact_second {
+        top: 723px;
+    }
+    .address {
+        color: black;
+        position: absolute;
+        font-family: 'Printvetica', sans-serif;
+        text-transform: uppercase;
+        right: 30px;
+        left: 31px;
+        text-align: center;
+        line-height: 21px;
+        font-size: 21px;
+        letter-spacing: -.47px;
+    }
+    .address_label {
+        font-size: 19px;
+        top: 804px;
+        letter-spacing: .7px;
+    }
+    .address_top {
+        top: 825px;
+    }
+    .address_bottom {
+        top: 849px;
     }
 </style>
 
@@ -128,7 +116,6 @@
     let prefix;
     let type;
     let name;
-    let group = "Casais";
     let date;
     let address_top;
     let address_bottom;
@@ -194,6 +181,8 @@
             <p>{last.contact_2}</p>
             <button on:click|preventDefault={ () => handleDelete(last.hash) }>Deletar</button>
             <button on:click|preventDefault={ () => handleRestoreData(last) }>Restaurar</button>
+        {:else}
+            <p>nenhum GC encontrado</p>
         {/each}
     </ul>
 </div>
@@ -201,13 +190,14 @@
 <div class="wrapper">
     <div class="folder" id="kit">
         <p class="title">{name}</p>
-        <p class="group">{group}</p>
         <p class="date">{date}</p>
+        <p class="contact contact_label">LÍDERES:</p>
+        <p class="contact contact_first">{contact_1}</p>
+        <p class="contact contact_second">{contact_2}</p>
+        <p class="address address_label">ENDEREÇO:</p>
         <p class="address address_top">{address_top}</p>
         <p class="address address_bottom">{address_bottom}</p>
-        <p class="contact contact-first">{contact_1}</p>
-        <p class="contact contact-second">{contact_2}</p>
-        <img class="base" src="../27/BASE-NEXT27.png" alt="">
-<!--        <img class="base" src="../27/EXEMPLO-NEXT27.png" alt="">-->
+        <img class="base" src="../27-casais/BASE-NEXT27-CASAIS.png" alt="">
+<!--        <img class="base" src="../27-casais/EXEMPLO-NEXT27-CASAIS.png" alt="">-->
     </div>
 </div>
