@@ -103,13 +103,18 @@
         retrieveLastData,
         generate,
         storageLastData,
-        capitalizeString,
-        deleteStorageDataByHash
+        deleteStorageDataByHash,
+        retrieveStorageDataByHash,
+        getFilename,
+        getGroupParamsByRouteId,
+        getGroupIdByRouteId
     } from "../+layout.js";
+    import { page } from "$app/stores";
 
     let lastData = [];
 
-    let prefix = "GC 27+";
+    let prefix;
+    let type;
     let name;
     let date;
     let address_top;
@@ -119,22 +124,15 @@
 
     onMount(async () => {
         lastData = retrieveLastData()
+        handleRestoreData(retrieveStorageDataByHash($page.url.searchParams.get('gc')))
     });
 
     async function handleGenerate() {
-        const filename = `${prefix} ${capitalizeString(name)} - ${date.toUpperCase()}.jpeg`
-        const obj = {
-            prefix: prefix,
-            name: name,
-            date: date,
-            address_top: address_top,
-            address_bottom: address_bottom,
-            contact_1: contact_1,
-            contact_2: contact_2
+        const storagedSucesfull = await storageLastData({ type, prefix, name, date, address_top, address_bottom, contact_1, contact_2 })
+        if(storagedSucesfull) {
+            generate(getFilename(prefix, name, date))
+            updateLastDataList()
         }
-        generate(filename)
-        await storageLastData(obj)
-        updateLastDataList()
     }
 
     function handleDelete(hash) {
@@ -142,17 +140,23 @@
         updateLastDataList()
     }
 
+    function handleClearFields() {
+        handleRestoreData({})
+    }
+
     function updateLastDataList() {
         lastData = retrieveLastData()
     }
 
     function handleRestoreData(lastData) {
-        name = lastData.name || "nome do gc";
-        date = lastData.date || "data hora";
-        address_top = lastData.address_top || "endereço";
-        address_bottom = lastData.address_bottom || "complemento";
-        contact_1 = lastData.contact_1 || "nome telefone";
-        contact_2 = lastData.contact_2 || "nome telefone";
+        type = getGroupIdByRouteId($page.routeId)
+        prefix = getGroupParamsByRouteId(type).prefix
+        name = lastData.name;
+        date = lastData.date;
+        address_top = lastData.address_top;
+        address_bottom = lastData.address_bottom;
+        contact_1 = lastData.contact_1;
+        contact_2 = lastData.contact_2;
     }
 
 </script>
@@ -166,16 +170,19 @@
     <input bind:value={contact_2} type="text" placeholder="Contato 2">
 
     <button on:click={handleGenerate}>Baixar Arte</button>
-    <button on:click={handleDelete}>Delete</button>
+    <button on:click={handleClearFields}>Limpar Campos</button>
 
     <ul>
         {#each lastData as last}
-            <li>{last.name} - {last.date}</li>
-            <li>{last.address_top} - {last.address_bottom}</li>
-            <li>{last.contact_1}</li>
-            <li>{last.contact_2}</li>
-            <button on:click|preventDefault={ () => handleDelete(last.hash) }>Delete</button>
+            <p><strong><a href="/gc-kit/?gc={last.hash}">{last.prefix} {last.name}</a></strong></p>
+            <p>{last.date}</p>
+            <p>{last.address_top} - {last.address_bottom}</p>
+            <p>{last.contact_1}</p>
+            <p>{last.contact_2}</p>
+            <button on:click|preventDefault={ () => handleDelete(last.hash) }>Deletar</button>
             <button on:click|preventDefault={ () => handleRestoreData(last) }>Restaurar</button>
+        {:else}
+            <p>nenhum GC encontrado</p>
         {/each}
     </ul>
 </div>

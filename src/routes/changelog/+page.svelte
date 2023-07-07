@@ -7,6 +7,7 @@
 
 <div>
     <ul>
+        <li>4.0.0 - Melhora recuperação de dados previamente salvos mantendo o tipo do grupo; Enriquece os dados salvos; Evita geração de múltiplas artes repetidas; Modifica layout da lista; Corrige botão de limpeza dos campos</li>
         <li>3.3.1 - Fix restore data</li>
         <li>3.3.0 - Novo template 27+ Casais</li>
         <li>3.2.1 - Nome do arquivo grupo misto</li>
