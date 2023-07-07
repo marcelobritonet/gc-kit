@@ -21,9 +21,8 @@ export async function storageLastData(obj) {
         const newData = [obj, ...lastData]
         const myJSON = JSON.stringify(newData);
         localStorage.setItem("last-item", myJSON);
-        return true
     }
-    return false
+    return true
 }
 
 export function deleteStorageDataByHash(hash) {

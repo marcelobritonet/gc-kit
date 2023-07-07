@@ -7,6 +7,7 @@
 
 <div>
     <ul>
+        <li>4.1.1 - Corrige o bloqueio da geração de arte quando nao houver mudança nos dados</li>
         <li>4.1.0 - Novo Template 27+</li>
         <li>4.0.1 - Corrige impressão da arte</li>
         <li>4.0.0 - Melhora recuperação de dados previamente salvos mantendo o tipo do grupo; Enriquece os dados salvos; Evita geração de múltiplas artes repetidas; Modifica layout da lista; Corrige botão de limpeza dos campos</li>
