@@ -4,16 +4,8 @@
 
 <style>
     @font-face {
-        font-family: 'Consola';
-        src: url("/font/consola.ttf");
-    }
-    @font-face {
-        font-family: 'Gobold Bold';
-        src: url("/font/gobold-bold.otf");
-    }
-    @font-face {
-        font-family: 'Hanson Bold';
-        src: url("/font/hanson-bold.ttf");
+        font-family: 'Printvetica';
+        src: url("/font/Printvetica.otf");
     }
     .wrapper {
         margin: 0;
@@ -36,64 +28,72 @@
         max-height: 1024px;
     }
     .title {
-        color: white;
+        color: #004012;
         position: absolute;
-        font-size: 28px;
+        font-size: 36px;
         text-transform: uppercase;
-        font-family: 'Hanson Bold', sans-serif;
+        font-family: 'Printvetica', sans-serif;
         text-align: center;
-        letter-spacing: .3px;
-        top: 415px;
+        letter-spacing: 0;
+        top: 451px;
         left: 37px;
         right: 30px;
     }
     .date {
-        color: white;
+        color: black;
         position: absolute;
-        font-size: 23px;
+        font-size: 30px;
         text-transform: uppercase;
-        font-family: 'Gobold Bold', sans-serif;
+        font-family: 'Printvetica', sans-serif;
         text-align: center;
-        letter-spacing: -1.4px;
-        top: 503px;
+        top: 545px;
         left: 32px;
         right: 30px;
     }
     .address {
-        color: white;
+        color: black;
         position: absolute;
-        font-family: 'Consola', sans-serif;
+        font-family: 'Printvetica', sans-serif;
         text-transform: uppercase;
         right: 30px;
-        left: 32px;
+        left: 31px;
         text-align: center;
         line-height: 21px;
-        font-size: 24px;
-        letter-spacing: -0.6px;
+        font-size: 21px;
+        letter-spacing: -.47px;
+    }
+    .address_label {
+        font-size: 19px;
+        top: 775px;
+        letter-spacing: .7px;
     }
     .address_top {
-        top: 606px;
-
+        top: 797px;
     }
     .address_bottom {
-        top: 629px;
+        top: 820px;
     }
     .contact {
-        color: white;
+        color: black;
         position: absolute;
-        font-family: 'Consola', sans-serif;
+        font-family: 'Printvetica', sans-serif;
         text-transform: uppercase;
         text-align: center;
         left: 52px;
         right: 50px;
-        font-size: 22px;
-        letter-spacing: -0.4px;
+        font-size: 21px;
+        letter-spacing: -.47px;
     }
-    .contact-first {
-        top: 703px;
+    .contact_label {
+        top: 650px;
+        font-size: 19px;
+        letter-spacing: .7px;
     }
-    .contact-second {
-        top: 727px;
+    .contact_first {
+        top: 671px;
+    }
+    .contact_second {
+        top: 695px;
     }
 </style>
 
@@ -191,10 +191,12 @@
     <div class="folder" id="kit">
         <p class="title">{name}</p>
         <p class="date">{date}</p>
+        <p class="contact contact_label">LÍDERES:</p>
+        <p class="contact contact_first">{contact_1}</p>
+        <p class="contact contact_second">{contact_2}</p>
+        <p class="address address_label">ENDEREÇO:</p>
         <p class="address address_top">{address_top}</p>
         <p class="address address_bottom">{address_bottom}</p>
-        <p class="contact contact-first">{contact_1}</p>
-        <p class="contact contact-second">{contact_2}</p>
         <img class="base" src="../27/BASE-NEXT27.png" alt="">
 <!--        <img class="base" src="../27/EXEMPLO-NEXT27.png" alt="">-->
     </div>

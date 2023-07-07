@@ -11,4 +11,4 @@
 
 <slot></slot>
 
-<a href="/changelog">4.0.1</a>
+<a href="/changelog">4.1.0</a>
